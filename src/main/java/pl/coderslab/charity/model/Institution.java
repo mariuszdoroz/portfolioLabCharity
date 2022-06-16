@@ -1,7 +1,9 @@
 package pl.coderslab.charity.model;
 
+import lombok.Data;
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table
 public class Institution {
@@ -12,4 +14,10 @@ public class Institution {
     private String name;
     private String description;
 
+    public Institution(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public Institution() {}
 }

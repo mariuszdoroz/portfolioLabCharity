@@ -1,7 +1,6 @@
 package pl.coderslab.charity.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,4 +18,10 @@ public class Role {
 
     @OneToMany(mappedBy = "role")
     private List<User> users;
+
+    public Role(String name) {
+        this.name = name;
+    }
+
+    public Role() {}
 }

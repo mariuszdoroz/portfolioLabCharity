@@ -1,7 +1,6 @@
 package pl.coderslab.charity.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
@@ -14,4 +13,9 @@ public class Category {
     private Long id;
     private String name;
 
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public Category() {}
 }

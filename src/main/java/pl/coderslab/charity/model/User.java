@@ -1,15 +1,9 @@
 package pl.coderslab.charity.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table
 public class User {
@@ -26,4 +20,11 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    public User(String username, String password, Role role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User() {}
 }
