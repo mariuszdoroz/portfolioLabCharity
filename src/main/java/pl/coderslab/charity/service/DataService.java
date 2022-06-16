@@ -72,7 +72,7 @@ public class DataService {
                             "Katowice",
                             "40-092",
                             LocalDate.parse("2022-06-19"),
-                            LocalTime.parse("18,00,00"),
+                            LocalTime.parse("18:00:00"),
                             "2nd floor",
                             userRepository.findAll().get(0)
                             )
