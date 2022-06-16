@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp" %>
+<header class="header--form-page">
+<%@ include file="main.jsp" %>
 
-<div class="slogan container container--90">
-    <h2>
-        Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
-        informacje o odbiorze.
-    </h2>
-</div>
+    <div class="slogan container container--90">
+        <h2>
+            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
+            informacje o odbiorze.
+        </h2>
+    </div>
 </header>
-
 <%@ include file="footer.jsp" %>

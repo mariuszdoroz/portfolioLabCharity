@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp" %>
+<header class="header--form-page">
+<%@ include file="main.jsp" %>
 <div class="slogan container container--90">
     <div class="slogan--item">
         <h1>

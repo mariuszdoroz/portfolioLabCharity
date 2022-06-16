@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp" %>
-
+<header class="header--main-page">
+<%@ include file="main.jsp" %>
 <div class="slogan container container--90">
     <div class="slogan--item">
         <h1>
-            Zacznij pomagać!<br />
+            <a href="/loaddata">Zacznij pomagać!</a><br />
             Oddaj niechciane rzeczy w zaufane ręce
         </h1>
     </div>
