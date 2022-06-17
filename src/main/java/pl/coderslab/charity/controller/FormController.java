@@ -16,13 +16,13 @@ public class FormController {
         this.donationService = donationService;
     }
 
-    @GetMapping("/form")
+    @GetMapping("/donationform")
     public String registerForm(Model model){
         model.addAttribute("donation", new Donation());
         return "form";
     }
 
-    @PostMapping("/form")
+    @PostMapping("/donationform")
     public String registerForm(Donation donation) {
         donationService.save(donation);
         return "redirect:/";

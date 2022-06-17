@@ -5,21 +5,26 @@
 </header>
 <section class="login-page">
     <h2>Załóż konto</h2>
-    <form>
+    <form:form action="/register" method="post" modelAttribute="user">
         <div class="form-group">
-            <input type="email" name="email" placeholder="Email" />
+            <form:input type="firstname" path="firstname" placeholder="First Name" />
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło" />
+            <form:input type="lastname" path="lastname" placeholder="Last Name" />
         </div>
         <div class="form-group">
-            <input type="password" name="password2" placeholder="Powtórz hasło" />
+            <form:input type="email" path="username" placeholder="Email" />
         </div>
-
+        <div class="form-group">
+            <form:input type="password" path="password" placeholder="Hasło" />
+        </div>
+<%--        <div class="form-group">--%>
+<%--            <form:input type="password" path="password2" placeholder="Powtórz hasło" />--%>
+<%--        </div>--%>
         <div class="form-group form-group--buttons">
             <a href="/login" class="btn btn--without-border">Zaloguj się</a>
             <button class="btn" type="submit">Załóż konto</button>
         </div>
-    </form>
+    </form:form>
 </section>
 <%@ include file="footer.jsp" %>

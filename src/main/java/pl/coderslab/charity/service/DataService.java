@@ -53,11 +53,11 @@ public class DataService {
         if(userRepository.findAll().size() == 0) {
             userRepository.saveAll(Arrays.asList(
                     //login: user@user.com / pass: 12345
-                    new User("user@user.com",
+                    new User("UserFirstName","UserLastName","user@user.com",
                             "$2a$12$hlg1KLbR/C9jwpLFsZL.nOkpAk0FyAS08vDEluWF.j8tLBrORpk0e",
                             roleRepository.findRoleByName("USER")),
                     //login: admin@admin.com / pass: 12345
-                    new User("admin@admin.com",
+                    new User("AdminFirstName","AdminLastName","admin@admin.com",
                             "$2a$12$hlg1KLbR/C9jwpLFsZL.nOkpAk0FyAS08vDEluWF.j8tLBrORpk0e",
                             roleRepository.findRoleByName("ADMIN"))
             ));
