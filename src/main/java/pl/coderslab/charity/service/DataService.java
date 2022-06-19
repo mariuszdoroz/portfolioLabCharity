@@ -38,8 +38,11 @@ public class DataService {
         //CategoryCreate
         if(categoryRepository.findAll().size() == 0) {
             categoryRepository.saveAll(Arrays.asList(
+                    new Category("ubrania, które nadają się do ponownego użycia"),
+                    new Category("ubrania, do wyrzucenia"),
+                    new Category("zabawki"),
                     new Category("ubrania"),
-                    new Category("zabawki")
+                    new Category("inne")
             ));
         }
         if(institutionRepository.findAll().size() == 0) {
@@ -71,8 +74,9 @@ public class DataService {
                             "Mickiewicza 0",
                             "Katowice",
                             "40-092",
+                            "555111555",
                             LocalDate.parse("2022-06-19"),
-                            LocalTime.parse("18:00:00"),
+                            LocalTime.parse("18:00"),
                             "2nd floor",
                             userRepository.findAll().get(0)
                             )

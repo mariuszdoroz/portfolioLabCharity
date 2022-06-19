@@ -1,9 +1,12 @@
 package pl.coderslab.charity.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 
 @Data
+@EqualsAndHashCode
 @Entity
 @Table
 public class Category {
