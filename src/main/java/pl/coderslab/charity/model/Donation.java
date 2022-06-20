@@ -1,14 +1,19 @@
 package pl.coderslab.charity.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode
+@AllArgsConstructor
 @Entity
 @Table
 public class Donation {
@@ -19,7 +24,7 @@ public class Donation {
     private Integer quantity;
 
     @OneToMany
-    private List<Category> categories;
+    private List<Category> categories = new ArrayList<>();
 
     @OneToOne
     private Institution institution;

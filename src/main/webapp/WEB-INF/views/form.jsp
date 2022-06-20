@@ -57,21 +57,24 @@
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
+<%--poniższy kod ładnie wyświetla dostepne opcje kategorii ale nie pozwala na zaznaczenie checkboxów--%>
 
-                <c:forEach items="${categories}" var="celem">
-                <div class="form-group form-group--checkbox">
-                    <label>
-                            <form:checkbox
-                                    path="categories"
-                                    value="${celem}"
-                            />
-                            <span class="checkbox"></span>
-                            <span class="description"
-                            >${celem.name}</span
-                            >
-                    </label>
-                </div>
-                </c:forEach>
+<%--                <c:forEach items="${categories}" var="celem">--%>
+<%--                <div class="form-group form-group--checkbox">--%>
+<%--                    <label>--%>
+<%--                            <form:checkbox--%>
+<%--                                    path="categories"--%>
+<%--                                    value="${celem}"--%>
+<%--                            />--%>
+<%--                            <span class="checkbox"></span>--%>
+<%--                            <span class="description"--%>
+<%--                            >${celem.name}</span--%>
+<%--                            >--%>
+<%--                    </label>--%>
+<%--                </div>--%>
+<%--                </c:forEach>--%>
+                <form:checkboxes path="categories"
+                                 items="${categories}" itemLabel="name"/>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
