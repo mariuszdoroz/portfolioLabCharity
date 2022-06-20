@@ -8,11 +8,10 @@
     <h2>Zaloguj się</h2>
     <form method="post" action="/login">
         <div class="form-group">
-            Wpisz: 1<input type="text" name="username" placeholder="Email" />
-<%--            <input type="email" name="username" placeholder="Email" />--%>
+            <input type="email" name="username" placeholder="Email" />
         </div>
         <div class="form-group">
-            Wpisz: 1 <input type="password" name="password" placeholder="Hasło" />
+            <input type="password" name="password" placeholder="Hasło" />
             <a href="/resetpassword" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
 

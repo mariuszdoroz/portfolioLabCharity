@@ -9,6 +9,8 @@ import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
+import java.security.Principal;
+
 @Controller
 public class DonationController {
 
@@ -32,8 +34,8 @@ public class DonationController {
     }
 
     @PostMapping("/donationform")
-    public String registerForm(Donation donation) {
-        donationService.save(donation);
-        return "redirect:/";
+    public String registerForm(Donation donation, Principal principal) {
+        donationService.save(donation, principal);
+        return "form-confirmation";
     }
 }

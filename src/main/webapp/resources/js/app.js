@@ -164,8 +164,43 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
-    }
 
+
+
+
+
+      //liczba workow
+      const bagammountin = document.getElementById("bagammountin");
+      const bagammountout = document.getElementById("bagammountout");
+      bagammountout.innerText = bagammountin.value + " worki ubrań w dobrym stanie dla dzieci";
+      //ktora fundacja  institutionout
+      const institutionin = document.getElementById("institutionin");
+      const institutionout = document.getElementById("institutionout");
+      institutionout.innerText = "Dla: " + institutionin.value;
+      //adres odbioru: streetout, cityout, zipcodeout, phoneout,
+      const streetin = document.getElementById("streetin");
+      const streetout = document.getElementById("streetout");
+      streetout.innerText = streetin.value;
+      const cityin = document.getElementById("cityin");
+      const cityout = document.getElementById("cityout");
+      cityout.innerText = cityin.value;
+      const zipcodein = document.getElementById("zipcodein");
+      const zipcodeout = document.getElementById("zipcodeout");
+      zipcodeout.innerText = zipcodein.value;
+      const phonein = document.getElementById("phonein");
+      const phoneout = document.getElementById("phoneout");
+      phoneout.innerText = phonein.value;
+      //termin odbioru: datesummaryout, timesummaryout, remarksout
+      const datesummaryin = document.getElementById("datesummaryin");
+      const datesummaryout = document.getElementById("datesummaryout");
+      datesummaryout.innerText = datesummaryin.value;
+      const timesummaryin = document.getElementById("timesummaryin");
+      const timesummaryout = document.getElementById("timesummaryout");
+      timesummaryout.innerText = timesummaryin.value;
+      const remarksin = document.getElementById("remarksin");
+      const remarksout = document.getElementById("remarksout");
+      remarksout.innerText = remarksin.value;
+    }
   }
   const form = document.querySelector(".form--steps");
   if (form !== null) {

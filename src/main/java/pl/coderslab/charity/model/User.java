@@ -1,6 +1,8 @@
 package pl.coderslab.charity.model;
 
 import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Data
@@ -19,6 +21,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
+    @ToString.Exclude
     private Role role;
 
     public User(String firstname, String lastname, String username, String password, Role role) {

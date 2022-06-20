@@ -57,32 +57,16 @@
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
-<%--poniższy kod ładnie wyświetla dostepne opcje kategorii ale nie pozwala na zaznaczenie checkboxów--%>
-
-<%--                <c:forEach items="${categories}" var="celem">--%>
-<%--                <div class="form-group form-group--checkbox">--%>
-<%--                    <label>--%>
-<%--                            <form:checkbox--%>
-<%--                                    path="categories"--%>
-<%--                                    value="${celem}"--%>
-<%--                            />--%>
-<%--                            <span class="checkbox"></span>--%>
-<%--                            <span class="description"--%>
-<%--                            >${celem.name}</span--%>
-<%--                            >--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--                </c:forEach>--%>
-                                    <c:forEach items="${categories}" var="celem">
-                                                <form:checkbox
-                                                        path="categories"
-                                                        value="${celem.id}"
-                                                        label="${celem.name}"
-                                                />
-                                        <br>
-                                    </c:forEach>
-<%--                <form:checkboxes path="categories"--%>
-<%--                                 items="${categories}" itemLabel="name"/>--%>
+                <c:forEach items="${categories}" var="celem">
+                    <label>
+                        <form:checkbox
+                                path="categories"
+                                value="${celem.id}"
+                        />
+                        <span class="checkbox"> - ${celem.name}</span>
+                    </label>
+                    <br>
+                </c:forEach>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
@@ -95,7 +79,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input type="number" path="quantity" step="1" min="1" />
+                        <form:input id="bagammountin" type="number" path="quantity" step="1" min="1" />
                     </label>
                 </div>
 
@@ -116,7 +100,7 @@
                             <form:radiobutton path="institution" value="${ielem}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
-                  <div class="title">${ielem.name}</div>
+                  <div class="title" id="institutionin">${ielem.name}</div>
                   <div class="subtitle">
                     ${ielem.description}
                   </div>
@@ -138,23 +122,23 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input type="text" path="street"/> </label>
+                            <label> Ulica <form:input id="streetin" type="text" path="street"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <form:input type="text" path="city"/> </label>
+                            <label> Miasto <form:input id="cityin" type="text" path="city"/> </label>
 
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input type="text" path="zipCode" />
+                                Kod pocztowy <form:input id="zipcodein" type="text" path="zipCode" />
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <form:input type="phone" path="phone" />
+                                Numer telefonu <form:input id="phonein" type="phone" path="phone" />
                             </label>
                         </div>
                     </div>
@@ -162,17 +146,17 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" path="pickUpDate" /> </label>
+                            <label> Data <form:input id="datesummaryin" type="date" path="pickUpDate" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" path="pickUpTime" /> </label>
+                            <label> Godzina <form:input id="timesummaryin" type="time" path="pickUpTime" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComment" rows="5"></form:textarea>
+                                <form:textarea id="remarksin" path="pickUpComment" rows="5"></form:textarea>
                             </label>
                         </div>
                     </div>
@@ -186,21 +170,20 @@
             <!-- STEP 6 -->
             <div data-step="5">
                 <h3>Podsumowanie Twojej darowizny</h3>
-
                 <div class="summary">
                     <div class="form-section">
                         <h4>Oddajesz:</h4>
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text" id="bagammountout">
+                                    4 worki ubrań w dobrym stanie dla dzieci
+                                </span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
+                                <span class="summary--text" id="institutionout"
                                 >Dla fundacji "Mam marzenie" w Warszawie</span
                                 >
                             </li>
@@ -211,19 +194,19 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="streetout">Prosta 51</li>
+                                <li id="cityout">Warszawa</li>
+                                <li id="zipcodeout">99-098</li>
+                                <li id="phoneout">123 456 789</li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="datesummaryout">13/12/2018</li>
+                                <li id="timesummaryout">15:40</li>
+                                <li id="remarksout">Brak uwag</li>
                             </ul>
                         </div>
                     </div>
