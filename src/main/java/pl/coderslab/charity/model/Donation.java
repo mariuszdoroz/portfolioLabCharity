@@ -24,7 +24,7 @@ public class Donation {
     private Integer quantity;
 
     @OneToMany
-    private List<Category> categories = new ArrayList<>();
+    private List<Category> categories;
 
     @OneToOne
     private Institution institution;
