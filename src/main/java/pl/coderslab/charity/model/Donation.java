@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Donation {
     private Long id;
     private Integer quantity;
 
-    @OneToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Category> categories;
 
     @OneToOne

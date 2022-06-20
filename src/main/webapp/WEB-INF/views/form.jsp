@@ -73,8 +73,16 @@
 <%--                    </label>--%>
 <%--                </div>--%>
 <%--                </c:forEach>--%>
-                <form:checkboxes path="categories"
-                                 items="${categories}" itemLabel="name"/>
+                                    <c:forEach items="${categories}" var="celem">
+                                                <form:checkbox
+                                                        path="categories"
+                                                        value="${celem.id}"
+                                                        label="${celem.name}"
+                                                />
+                                        <br>
+                                    </c:forEach>
+<%--                <form:checkboxes path="categories"--%>
+<%--                                 items="${categories}" itemLabel="name"/>--%>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
