@@ -12,9 +12,8 @@
                     Witaj <sec:authentication property="name"/></a>
                     <ul class="dropdown">
                         <li><a href="/profile">Profil</a></li>
-<%--                        <sec:authorize access="hasRole('ADMIN')">--%>
-                            <li><a href="/adminpanel">Admin Panel</a></li>
-<%--                        </sec:authorize>--%>
+                        <li><a href="/adminpanel">Admin Panel</a></li>
+                        <li><a href="/institution">Instytucje</a></li>
                         <li><a href="/mydonations">Moje zbiórki</a></li>
                         <li><a href="/logout">Wyloguj</a></li>
                     </ul>
